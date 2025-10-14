@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Responsive Grid Layout</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .parent {
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      grid-template-rows: auto auto 1fr auto;
+      gap: 10px;
+      padding: 10px;
+      grid-template-areas:
+        "nav nav nav"
+        "header header sidebar"
+        "featured main sidebar"
+        "footer footer footer";
+    }
+
+    nav {
+      grid-area: nav;
+      background-color: #4caf50;
+      color: white;
+      padding: 20px;
+    }
+
+    header {
+      grid-area: header;
+      background-color: #f44336;
+      color: white;
+      padding: 20px;
+    }
+
+    .highlight {
+      grid-area: featured;
+      background-color: #ffeb3b;
+      color: #333;
+      padding: 20px;
+    }
+
+    article {
+      grid-area: main;
+      background-color: #2196f3;
+      color: white;
+      padding: 20px;
+    }
+
+    aside {
+      grid-area: sidebar;
+      background-color: #ffc0cb;
+      padding: 20px;
+    }
+
+    footer {
+      grid-area: footer;
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+
+    @media (max-width: 768px) {
+      .parent {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "nav"
+          "header"
+          "featured"
+          "main"
+          "sidebar"
+          "footer";
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="parent">
+  <nav>
+    <h2>Navigation</h2>
+    <ul style="list-style: none; padding: 0;">
+      <li><a href="#" style="color:white; text-decoration: none;">Home</a></li>
+      <li><a href="#" style="color:white; text-decoration: none;">About</a></li>
+      <li><a href="#" style="color:white; text-decoration: none;">Services</a></li>
+      <li><a href="#" style="color:white; text-decoration: none;">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Welcome to Our Site</h1>
+    <p>Learn more about our services and offers.</p>
+  </header>
+
+  <div class="highlight">
+    <h
+    
